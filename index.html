@@ -262,10 +262,8 @@ footer {
 
     <h2>Join Early Access</h2>
 
-    <form action="https://formspree.io/f/xzdqdjqz" method="POST">
-
-      <!-- 🔥 REDIRECT FIX -->
-      <input type="hidden" name="_redirect" value="https://YOUR-VERCEL-LINK.vercel.app/thanks.html">
+    <form action="https://formspree.io/f/xzdqdjqz" method="POST"
+      onsubmit="setTimeout(function(){ window.location.href='/thanks.html'; }, 400); return true;">
 
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />

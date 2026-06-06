@@ -18,10 +18,9 @@ body {
   height: 100vh;
 }
 
-/* floating background */
 .float {
   position: absolute;
-  font-size: 70px;
+  font-size: 60px;
   font-weight: bold;
   color: rgba(255,255,255,0.05);
   animation: float 8s infinite ease-in-out;
@@ -34,7 +33,6 @@ body {
   100% { transform: translateY(0px); }
 }
 
-/* main card */
 .card {
   max-width: 650px;
   text-align: center;
@@ -68,7 +66,6 @@ p {
   font-weight: bold;
 }
 
-/* button */
 .btn {
   margin-top: 20px;
   padding: 12px 18px;
@@ -85,7 +82,6 @@ p {
   transform: scale(1.05);
 }
 
-/* small text */
 .small {
   margin-top: 12px;
   font-size: 13px;
@@ -96,7 +92,7 @@ p {
 
 <body>
 
-<!-- floating text -->
+<!-- floating background -->
 <div class="float" style="top:40px;left:10%">CLIENTFLOW</div>
 <div class="float" style="top:200px;right:10%">EARLY ACCESS</div>
 
@@ -114,23 +110,24 @@ p {
   </p>
 
   <p>
-    💰 As a founding user, you’ll unlock:
+    💰 Founding users benefits:
     <br><br>
     ✔ Lifetime discount<br>
-    ✔ Priority onboarding<br>
-    ✔ Early feature access
+    ✔ Priority access<br>
+    ✔ Early feature updates
   </p>
 
   <p>
     ⏳ Launch is coming soon — stay tuned!
   </p>
 
-  <button class="btn" onclick="navigator.clipboard.writeText(window.location.href)">
-    Copy Invite Link
+  <!-- UPDATED BUTTON -->
+  <button class="btn" onclick="window.location.href='/'">
+    Back to Home
   </button>
 
   <div class="small">
-    Share this page to invite others & get early updates.
+    We’ll notify you on your email with updates.
   </div>
 
 </div>

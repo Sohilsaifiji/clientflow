@@ -264,10 +264,15 @@ footer {
     <h2>Join Early Access</h2>
 
     <form action="https://formspree.io/f/xzdqdjqz" method="POST"
-      onsubmit="setTimeout(function(){ window.location.href='/thanks.html'; }, 400); return true;">
+      onsubmit="return validateForm(event)">
 
       <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
+
+      <input type="email" name="email"
+        placeholder="Your Email"
+        required
+        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        title="Enter a valid email address">
 
       <div class="question">
         What is your biggest challenge in client onboarding?
@@ -289,6 +294,23 @@ footer {
   </footer>
 
 </div>
+
+<script>
+function validateForm(e) {
+  let email = document.querySelector('input[name="email"]').value;
+
+  let blockedDomains = ["mailinator.com", "tempmail.com", "fake.com", "test.com"];
+
+  let domain = email.split("@")[1];
+
+  if (!domain || blockedDomains.includes(domain)) {
+    alert("Please enter a valid email address");
+    return false;
+  }
+
+  return true;
+}
+</script>
 
 </body>
 </html>

@@ -147,13 +147,16 @@ input, textarea {
   color: white;
 }
 
-/* ✅ PLACEHOLDER FIX */
-input::placeholder,
-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.75);
+/* QUESTION TEXT FIX */
+.question {
+  margin-top: 10px;
+  margin-bottom: 6px;
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 14px;
 }
 
-/* textarea better UX */
+/* textarea better */
 textarea {
   resize: none;
   min-height: 120px;
@@ -276,9 +279,13 @@ footer {
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
 
-      <textarea name="problem" rows="4"
-        placeholder="What is your biggest challenge in client onboarding? (VERY IMPORTANT)">
-      </textarea>
+      <!-- QUESTION -->
+      <div class="question">
+        What is your biggest challenge in client onboarding?
+      </div>
+
+      <!-- ANSWER BOX -->
+      <textarea name="problem" placeholder="Type your answer here..." required></textarea>
 
       <button class="btn" type="submit">Join Waitlist</button>
     </form>

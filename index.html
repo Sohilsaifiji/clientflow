@@ -14,9 +14,9 @@ body {
   overflow-x: hidden;
 }
 
-/* container */
+/* container (WIDER) */
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
   padding: 60px 20px;
 }
@@ -111,25 +111,25 @@ body {
   border-left: 4px solid #22d3ee;
 }
 
-/* SCREENSHOT (FIXED BIG STYLE) */
+/* SCREENSHOT (BIG PREMIUM STYLE) */
 .screenshot {
   margin-top: 60px;
-  padding: 15px;
+  padding: 12px;
   border-radius: 18px;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.1);
   text-align: center;
 }
 
-/* IMAGE FIX */
+/* IMAGE (INCREASED SIZE) */
 .screenshot img {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1350px;
   height: auto;
-  border-radius: 14px;
+  border-radius: 16px;
   display: block;
   margin: auto;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.5);
 }
 
 /* FORM */
@@ -156,14 +156,18 @@ footer {
   font-size: 13px;
 }
 
-/* MOBILE FIX */
+/* MOBILE */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 34px;
   }
 
   .screenshot {
-    padding: 10px;
+    padding: 8px;
+  }
+
+  .screenshot img {
+    max-width: 100%;
   }
 }
 </style>
@@ -176,7 +180,9 @@ footer {
   <!-- NAV -->
   <div class="nav">
     <div class="logo">ClientFlow</div>
-    <button class="btn" onclick="document.getElementById('form').scrollIntoView()">Join Waitlist</button>
+    <button class="btn" onclick="document.getElementById('form').scrollIntoView()">
+      Join Waitlist
+    </button>
   </div>
 
   <!-- HERO -->

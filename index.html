@@ -16,7 +16,7 @@ body {
 
 /* container */
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   padding: 60px 20px;
 }
@@ -103,24 +103,33 @@ body {
   backdrop-filter: blur(10px);
 }
 
-/* PAIN */
 .pain {
   border-left: 4px solid #ef4444;
 }
 
-/* SOLUTION */
 .solution {
   border-left: 4px solid #22d3ee;
 }
 
-/* SCREENSHOT */
+/* SCREENSHOT (FIXED BIG STYLE) */
 .screenshot {
   margin-top: 60px;
-  padding: 40px;
-  border-radius: 14px;
+  padding: 15px;
+  border-radius: 18px;
   background: rgba(255,255,255,0.04);
-  border: 1px dashed rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
   text-align: center;
+}
+
+/* IMAGE FIX */
+.screenshot img {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+  margin: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 
 /* FORM */
@@ -145,6 +154,17 @@ footer {
   margin-top: 60px;
   color: #64748b;
   font-size: 13px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .screenshot {
+    padding: 10px;
+  }
 }
 </style>
 </head>
@@ -194,9 +214,9 @@ footer {
   </div>
 
   <!-- SCREENSHOT 1 -->
-     <div class="screenshot">
-  <img src="dashboard.png" style="width:100%; border-radius:12px;">
-</div>
+  <div class="screenshot">
+    <img src="dashboard.png">
+  </div>
 
   <!-- SOLUTION -->
   <div class="grid">
@@ -218,8 +238,8 @@ footer {
 
   <!-- SCREENSHOT 2 -->
   <div class="screenshot">
-  <img src="client.png" style="width:100%; border-radius:12px;">
-</div>
+    <img src="client.png">
+  </div>
 
   <!-- HOW IT WORKS -->
   <div class="grid">
@@ -239,8 +259,7 @@ footer {
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
 
-      <textarea name="problem"
-        rows="4"
+      <textarea name="problem" rows="4"
         placeholder="What is your biggest challenge in client onboarding? (VERY IMPORTANT)">
       </textarea>
 

@@ -14,7 +14,7 @@ body {
   overflow-x: hidden;
 }
 
-/* container (WIDER) */
+/* container */
 .container {
   max-width: 1400px;
   margin: auto;
@@ -111,7 +111,7 @@ body {
   border-left: 4px solid #22d3ee;
 }
 
-/* SCREENSHOT (BIG PREMIUM STYLE) */
+/* SCREENSHOT */
 .screenshot {
   margin-top: 60px;
   padding: 12px;
@@ -121,7 +121,6 @@ body {
   text-align: center;
 }
 
-/* IMAGE (INCREASED SIZE) */
 .screenshot img {
   width: 100%;
   max-width: 1350px;
@@ -146,6 +145,18 @@ input, textarea {
   border: none;
   background: rgba(255,255,255,0.05);
   color: white;
+}
+
+/* ✅ PLACEHOLDER FIX */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* textarea better UX */
+textarea {
+  resize: none;
+  min-height: 120px;
 }
 
 /* FOOTER */

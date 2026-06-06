@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ClientFlow - Client Onboarding Tool</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* container */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  color: #38bdf8;
+  font-size: 20px;
+}
+
+/* BUTTON */
+.btn {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 52px;
+  background: linear-gradient(90deg, #60a5fa, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  color: #cbd5e1;
+  font-size: 18px;
+  max-width: 750px;
+  margin: auto;
+}
+
+/* FLOATING TEXT */
+.float {
+  position: absolute;
+  font-size: 70px;
+  font-weight: bold;
+  color: rgba(255,255,255,0.06);
+  animation: float 10s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0px); }
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* PAIN */
+.pain {
+  border-left: 4px solid #ef4444;
+}
+
+/* SOLUTION */
+.solution {
+  border-left: 4px solid #22d3ee;
+}
+
+/* SCREENSHOT */
+.screenshot {
+  margin-top: 60px;
+  padding: 40px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px dashed rgba(255,255,255,0.2);
+  text-align: center;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.05);
+  color: white;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin-top: 60px;
+  color: #64748b;
+  font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="logo">ClientFlow</div>
+    <button class="btn" onclick="document.getElementById('form').scrollIntoView()">Join Waitlist</button>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+
+    <div class="float" style="top:10px;left:5%">CLIENT</div>
+    <div class="float" style="top:120px;right:5%">ONBOARD</div>
+
+    <h1>Stop Losing Clients in Onboarding Chaos</h1>
+    <p>
+      Send one link and collect all client assets, files, and access details in seconds — without chasing anyone on WhatsApp or email.
+    </p>
+
+    <button class="btn" onclick="document.getElementById('form').scrollIntoView()">
+      Get Early Access
+    </button>
+  </div>
+
+  <!-- PAIN -->
+  <div class="grid">
+    <div class="card pain">
+      <h3>Endless Follow-ups</h3>
+      Clients never send required files on time.
+    </div>
+
+    <div class="card pain">
+      <h3>Scattered Data</h3>
+      Everything is lost in WhatsApp, email, and Drive.
+    </div>
+
+    <div class="card pain">
+      <h3>Project Delays</h3>
+      Missing assets delay entire project timelines.
+    </div>
+  </div>
+
+  <!-- SCREENSHOT 1 -->
+ <div class="screenshot">
+  <img src="images/dashboard.png" style="width:100%; border-radius:12px;">
+</div>
+
+  <!-- SOLUTION -->
+  <div class="grid">
+    <div class="card solution">
+      <h3>One Smart Link</h3>
+      Send a single onboarding link to client.
+    </div>
+
+    <div class="card solution">
+      <h3>Structured Collection</h3>
+      Everything collected in proper format.
+    </div>
+
+    <div class="card solution">
+      <h3>Faster Project Start</h3>
+      Start work without waiting days.
+    </div>
+  </div>
+
+  <!-- SCREENSHOT 2 -->
+<div class="screenshot">
+  <img src="images/client.png" style="width:100%; border-radius:12px;">
+</div>
+
+  <!-- HOW IT WORKS -->
+  <div class="grid">
+    <div class="card">1. Create onboarding link</div>
+    <div class="card">2. Send to client</div>
+    <div class="card">3. Client fills details</div>
+    <div class="card">4. Organized dashboard ready</div>
+  </div>
+
+  <!-- FORM -->
+  <div class="screenshot" id="form">
+
+    <h2>Join Early Access</h2>
+
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+
+      <textarea name="problem"
+        rows="4"
+        placeholder="What is your biggest challenge in client onboarding? (VERY IMPORTANT)">
+      </textarea>
+
+      <button class="btn" type="submit">Join Waitlist</button>
+    </form>
+
+    <p style="color:#94a3b8; font-size:13px; margin-top:10px;">
+      Early users get lifetime discount + priority access.
+    </p>
+
+  </div>
+
+  <footer>
+    © 2026 ClientFlow — Built for freelancers & agencies
+  </footer>
+
+</div>
+
+</body>
+</html>

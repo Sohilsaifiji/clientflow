@@ -20,7 +20,6 @@ body {
   padding: 60px 20px;
 }
 
-/* NAV */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -33,7 +32,6 @@ body {
   font-size: 20px;
 }
 
-/* BUTTON */
 .btn {
   background: linear-gradient(90deg, #3b82f6, #06b6d4);
   padding: 12px 18px;
@@ -49,7 +47,6 @@ body {
   transform: scale(1.05);
 }
 
-/* HERO */
 .hero {
   text-align: center;
   padding: 90px 20px;
@@ -70,10 +67,9 @@ body {
   margin: auto;
 }
 
-/* FLOATING TEXT */
 .float {
   position: absolute;
-  font-size: 64px;
+  font-size: 60px;
   font-weight: bold;
   color: rgba(255,255,255,0.05);
   animation: float 10s infinite ease-in-out;
@@ -82,11 +78,10 @@ body {
 
 @keyframes float {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-30px); }
+  50% { transform: translateY(-25px); }
   100% { transform: translateY(0px); }
 }
 
-/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -110,7 +105,6 @@ body {
   border-left: 4px solid #22d3ee;
 }
 
-/* SCREENSHOTS */
 .screenshot {
   margin-top: 60px;
   padding: 12px;
@@ -123,11 +117,13 @@ body {
 .screenshot img {
   width: 100%;
   max-width: 1350px;
+  height: auto;
   border-radius: 16px;
+  display: block;
+  margin: auto;
   box-shadow: 0 25px 70px rgba(0,0,0,0.5);
 }
 
-/* FORM */
 form {
   display: flex;
   flex-direction: column;
@@ -144,18 +140,18 @@ input, textarea {
 }
 
 textarea {
-  min-height: 120px;
   resize: none;
+  min-height: 120px;
 }
 
 .question {
   margin-top: 10px;
+  margin-bottom: 6px;
   color: #cbd5e1;
   font-weight: 600;
   font-size: 14px;
 }
 
-/* FOOTER */
 footer {
   text-align: center;
   margin-top: 60px;
@@ -163,20 +159,17 @@ footer {
   font-size: 13px;
 }
 
-/* FLOATING BADGES */
-.badge {
-  position: absolute;
-  font-size: 56px;
-  font-weight: bold;
-  color: rgba(255,255,255,0.04);
-  animation: float 12s infinite ease-in-out;
-  pointer-events: none;
-}
-
-/* MOBILE */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 34px;
+  }
+
+  .screenshot {
+    padding: 8px;
+  }
+
+  .screenshot img {
+    max-width: 100%;
   }
 }
 </style>
@@ -197,14 +190,13 @@ footer {
   <!-- HERO -->
   <div class="hero">
 
-    <!-- FLOATING URGENCY TEXT (CLEAN VERSION) -->
     <div class="float" style="top:10px;left:5%">EARLY ACCESS</div>
-    <div class="float" style="top:140px;right:5%">LIMITED SPOTS</div>
-    <div class="float" style="top:280px;left:15%">LAUNCH SOON</div>
+    <div class="float" style="top:120px;right:5%">LIMITED SPOTS</div>
+    <div class="float" style="top:260px;left:10%">LAUNCH SOON</div>
 
     <h1>Stop Losing Clients in Onboarding Chaos</h1>
     <p>
-      Send one smart link and collect all client assets, files, and access details in seconds — without chasing anyone on WhatsApp or email.
+      Send one smart link and collect all client assets, files, and access details instantly — without chasing on WhatsApp or email.
     </p>
 
     <button class="btn" onclick="document.getElementById('form').scrollIntoView()">
@@ -271,7 +263,8 @@ footer {
 
     <h2>Join Early Access</h2>
 
-    <form action="https://formspree.io/f/xzdqdjqz" method="POST">
+    <form action="https://formspree.io/f/xzdqdjqz" method="POST"
+      onsubmit="setTimeout(function(){ window.location.href='/thanks.html'; }, 400); return true;">
 
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />

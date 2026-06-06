@@ -1,33 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Thank You</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background: #0f172a;
-      color: white;
-      font-family: Arial;
-      text-align: center;
-      padding-top: 120px;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Thank You - ClientFlow</title>
 
-    h1 {
-      color: #22d3ee;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: white;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-  </style>
+/* floating background */
+.float {
+  position: absolute;
+  font-size: 70px;
+  font-weight: bold;
+  color: rgba(255,255,255,0.05);
+  animation: float 8s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0px); }
+}
+
+/* main card */
+.card {
+  max-width: 650px;
+  text-align: center;
+  padding: 40px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  animation: pop 0.6s ease-out;
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+  font-size: 42px;
+  color: #22d3ee;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #38bdf8;
+  font-weight: bold;
+}
+
+/* button */
+.btn {
+  margin-top: 20px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* small text */
+.small {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+</style>
 </head>
+
 <body>
 
-  <h1>🎉 Thank You!</h1>
-  <p>Your response has been recorded successfully.</p>
+<!-- floating text -->
+<div class="float" style="top:40px;left:10%">CLIENTFLOW</div>
+<div class="float" style="top:200px;right:10%">EARLY ACCESS</div>
 
-  <a href="/">Go Back</a>
+<div class="card">
+
+  <h1>🎉 You’re In!</h1>
+
+  <p>
+    Thanks for joining the <span class="highlight">ClientFlow Waitlist</span>.
+  </p>
+
+  <p>
+    🚀 We’re building something powerful for freelancers & agencies.
+    You’ll get <span class="highlight">early access before public launch</span>.
+  </p>
+
+  <p>
+    💰 As a founding user, you’ll unlock:
+    <br><br>
+    ✔ Lifetime discount<br>
+    ✔ Priority onboarding<br>
+    ✔ Early feature access
+  </p>
+
+  <p>
+    ⏳ Launch is coming soon — stay tuned!
+  </p>
+
+  <button class="btn" onclick="navigator.clipboard.writeText(window.location.href)">
+    Copy Invite Link
+  </button>
+
+  <div class="small">
+    Share this page to invite others & get early updates.
+  </div>
+
+</div>
 
 </body>
 </html>
